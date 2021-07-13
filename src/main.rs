@@ -8,13 +8,17 @@ use printHello::hello2::print_hello2;//使用printHello这个模块的子模块h
 
 mod ch03;
 mod ch04;
+mod ch05;
+mod unittype;
+
 
 fn main() {
     //println! 调用了一个 Rust 宏（macro）, 当看到符号 ! 的时候，就意味着调用的是宏而不是普通函数。
     //println!("Hello, world!");
 
     //ch03::basic_concepts::main();
-    ch04::ownership::main();
-}
+    //ch04::ownership::main();
+    ch05::struct_demo::main();
 
+}
 

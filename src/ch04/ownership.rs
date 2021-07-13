@@ -243,3 +243,12 @@ fn first_word2(s: &str) -> &str {
     &s[..]
 }
 
+
+fn test_slice() {
+    //String literals are string slices:
+    let hello = "Hello, world!";
+
+    // with an explicit type annotation
+    let hello: &'static str = "Hello, world!";
+}
+
