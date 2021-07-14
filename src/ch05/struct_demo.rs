@@ -205,5 +205,5 @@ fn test_method_syntax() {
 //测试关联函数(Associated Functions)
 fn test_associated_functions() {
    let square = Rectangle::square(50);
-    println!("rect1 is {:?}", rect);
+    println!("rect1 is {:?}", square);
 }

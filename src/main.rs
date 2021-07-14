@@ -10,6 +10,7 @@ mod ch03;
 mod ch04;
 mod ch05;
 mod unittype;
+mod ch06;
 
 
 fn main() {
@@ -18,7 +19,8 @@ fn main() {
 
     //ch03::basic_concepts::main();
     //ch04::ownership::main();
-    ch05::struct_demo::main();
+    //ch05::struct_demo::main();
+    ch06::enums::main();
 
 }
 
