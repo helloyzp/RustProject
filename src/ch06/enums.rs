@@ -14,25 +14,18 @@ pub fn main() {
     let six = IpAddrKind::V6;
 
 
-
     route(IpAddrKind::V4);
     route(IpAddrKind::V6);
 
-/*    let usStat:if_let::UsState = if_let::UsState::Alabama;
-    let  coin : if_let::Coin = if_let::Coin::Quarter(usStat);
-    if_let::test_coin2(coin);*/
-
+    /*    let usStat:if_let::UsState = if_let::UsState::Alabama;
+        let  coin : if_let::Coin = if_let::Coin::Quarter(usStat);
+        if_let::test_coin2(coin);*/
 }
 
-fn route(ip_type: IpAddrKind) {
-
-}
-
-
+fn route(ip_type: IpAddrKind) {}
 
 
 fn use_ip_addr() {
-
     let home = IpAddr {
         kind: IpAddrKind::V4,
         address: String::from("127.0.0.1"),
@@ -42,26 +35,33 @@ fn use_ip_addr() {
         kind: IpAddrKind::V6,
         address: String::from("::1"),
     };
-
 }
 
 
 //一个 Message 枚举，其每个成员都存储了不同数量和类型的值
 enum Message {
-    Quit,                         //Quit成员没有关联任何数据
-    Move { x: i32, y: i32 },      //Move成员存储了两个i32类型的值
-    Write(String),                //Write成员存储了一个String类型的值
+    Quit,
+    //Quit成员没有关联任何数据
+    Move { x: i32, y: i32 },
+    //Move成员存储了两个i32类型的值
+    Write(String),
+    //Write成员存储了一个String类型的值
     ChangeColor(i32, i32, i32),   //ChangeColor成员存储了三个i32类型的值
 }
 
 
 //定义一个如示例 6-2 中所示那样的有关联值的枚举的方式和定义多个不同类型的结构体的方式很相像
-struct QuitMessage; // 类单元结构体
+struct QuitMessage;
+
+// 类单元结构体
 struct MoveMessage {
     x: i32,
     y: i32,
 }
-struct WriteMessage(String); // 元组结构体
+
+struct WriteMessage(String);
+
+// 元组结构体
 struct ChangeColorMessage(i32, i32, i32); // 元组结构体
 
 
@@ -110,7 +110,7 @@ fn value_in_cents2(coin: Coin) -> u8 {
         Coin::Penny => {
             println!("Lucky penny!");
             1
-        },
+        }
         Coin::Nickel => 5,
         Coin::Dime => 10,
         Coin::Quarter => 25,
@@ -120,7 +120,6 @@ fn value_in_cents2(coin: Coin) -> u8 {
 
 //绑定值的模式
 mod Patterns_that_Bind_to_Values {
-
     #[derive(Debug)] // 这样可以立刻看到州的名称
     pub(crate) enum UsState {
         Alabama,
@@ -144,21 +143,18 @@ mod Patterns_that_Bind_to_Values {
             Coin::Quarter(state) => {
                 println!("State quarter from {:?}!", state);
                 25
-            },
+            }
         }
     }
 
     fn test() {
         value_in_cents(Coin::Quarter(UsState::Alaska));
     }
-
-
 }
 
 
 //匹配 Option<T>
 mod Matching_with_Option {
-
     fn plus_one(x: Option<i32>) -> Option<i32> {
         match x {
             None => None,
@@ -171,13 +167,10 @@ mod Matching_with_Option {
         let six = plus_one(five);
         let none = plus_one(None);
     }
-
-
 }
 
 //通配符_
-mod The_Placeholder{
-
+mod The_Placeholder {
     fn test() {
         let some_u8_value = 0u8;
         match some_u8_value {
@@ -188,11 +181,10 @@ mod The_Placeholder{
             _ => (),
         }
     }
-
 }
 
 
-mod if_let{
+mod if_let {
     use crate::ch06::enums::{Patterns_that_Bind_to_Values, Patterns_that_Bind_to_Values::Coin, Patterns_that_Bind_to_Values::UsState};
 
     fn test() {
@@ -211,7 +203,6 @@ mod if_let{
     }
 
     fn test_coin1(coin: Patterns_that_Bind_to_Values::Coin) {
-
         let mut count = 0;
         match coin {
             Coin::Quarter(state) => println!("State quarter from {:?}!", state),
@@ -227,5 +218,4 @@ mod if_let{
             count += 1;
         }
     }
-
 }

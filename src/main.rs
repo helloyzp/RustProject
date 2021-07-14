@@ -11,6 +11,7 @@ mod ch04;
 mod ch05;
 mod unittype;
 mod ch06;
+mod ch07;
 
 
 fn main() {
