@@ -6,10 +6,11 @@ use hello::print_hello;//使用use引用hello这个模块下的print_hello()函�
 mod printHello;//声明printHello这个模块
 use printHello::hello2::print_hello2;//使用printHello这个模块的子模块hello2的print_hello2()函数
 
+mod common;
+
 mod ch03;
 mod ch04;
 mod ch05;
-mod unittype;
 mod ch06;
 mod ch07;
 
